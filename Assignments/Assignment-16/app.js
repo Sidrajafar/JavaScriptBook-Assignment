@@ -53,3 +53,54 @@ function out()
                                   // Assignment # 49-52
 // 1. Create a signup form and display form data in your web
 // page on submission.
+
+
+
+
+                           // Assignment # 53-57 JAVASCRIPT
+// 1. Consider you have 4 images in a file as shown below:
+// Now When you click on an image it should display in a modal.
+// Modal code is available in this assignment file.
+var modal = document.getElementById('modal');
+var modalImage = document.getElementById('modalImage');
+var isZoomed = false;
+
+function openModal(imageUrl) {
+  modalImage.src = imageUrl;
+  modal.style.display = 'block';
+  toggleZoom();
+}
+
+function toggleZoom() {
+  if (isZoomed) {
+    modalImage.style.transform = 'scale(1)';
+  } else {
+    modalImage.style.transform = 'scale(1.2)';
+  }
+  isZoomed = !isZoomed;
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+  modalImage.style.transform = 'scale(1)';
+}
+
+
+// 2. Create a paragraph and two buttons “zoom in ”(+) and “zoom out”(-).
+// On each click on “zoom in”(+) , add 10px in font size of paragraph.
+// And on each click on “zoom out”(-) , minus 10px in font size of paragraph.
+var paragraph = document.getElementById('zoom-paragraph');
+var fontSize = 16;
+
+function zoomIn() {
+  fontSize += 10;
+  paragraph.style.fontSize = fontSize + 'px';
+}
+
+function zoomOut() {
+  fontSize -= 10;
+  if (fontSize < 0) {
+    fontSize = 0;
+  }
+  paragraph.style.fontSize = fontSize + 'px';
+}
